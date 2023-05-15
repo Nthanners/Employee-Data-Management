@@ -1,2 +1,3 @@
 # Employee-Data-Management
-A system that manages employee data
+A simple system that inputs and manages employee data
+updated!
