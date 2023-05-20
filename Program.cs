@@ -74,12 +74,7 @@ class Program
                     break;
 
                 case 3:
-                    Console.WriteLine("Employee Data:");
-                    Console.WriteLine("Name Department Salary StartDate");
-                    for (int i = 0; i < employeeCount; i++)
-                    {
-                        Console.WriteLine("{0} {1} {2} {3}", employees[i, 0], employees[i, 1], employees[i, 2], employees[i, 3]);
-                    }
+                    DisplayEmployeeData(employees, employeeCount);
                     break;
 
                 case 4:
@@ -92,5 +87,16 @@ class Program
             }
 
         } while (choice != 4);
+    }
+
+    static void DisplayEmployeeData(string[,] employees, int count)
+    {
+        Console.WriteLine("Employee Data:");
+        Console.WriteLine("Name Department Salary StartDate");
+        for (int i = 0; i < count; i++)
+        {
+            Console.WriteLine("{0} {1} {2} {3}", employees[i, 0], employees[i, 1], employees[i, 2], employees[i, 3]);
+        }
+        Console.WriteLine();
     }
 }
