@@ -6,58 +6,9 @@ class EmployeeManagement
     private string[,] employees = new string[10, 4];
     private List<string> employeeList = new List<string>();
     private int employeeCount = 0;
-
-    public void RunEmployeeManagementSystem()
+    
+    public void EnterEmployeeData()
     {
-        int choice = 0;
-
-        do
-        {
-            Console.WriteLine("*******************");
-            Console.WriteLine("*     MENU        *");
-            Console.WriteLine("*******************");
-            Console.WriteLine("1. Enter Employee Data:");
-            Console.WriteLine("2. Sort Employee Data by Start Date");
-            Console.WriteLine("3. Display Employee Data");
-            Console.WriteLine("4. Display Employee List");
-            Console.WriteLine("5. Exit");
-            Console.WriteLine("Enter your Choice (1-5):");
-            choice = int.Parse(Console.ReadLine());
-
-            switch (choice)
-            {
-                case 1:
-                    EnterEmployeeData();
-                    break;
-
-                case 2:
-                    SortEmployeeDataByStartDate();
-                    Console.WriteLine("** Employee Data Sorted by Start Date! **\n");
-                    break;
-
-                case 3:
-                    DisplayEmployeeData();
-                    break;
-
-                case 4:
-                    DisplayEmployeeList();
-                    break;
-
-                case 5:
-                    Console.WriteLine("Exiting Program...");
-                    break;
-
-                default:
-                    Console.WriteLine("** Invalid Choice! Please Choose A Valid Option. **\n");
-                    break;
-            }
-
-        } while (choice != 5);
-    }
-
-    private void EnterEmployeeData()
-    {
-        Console.WriteLine("** Enter Data for the Employee **\n");
         if (employeeCount < 10)
         {
             Console.WriteLine("Enter Data for Employee {0}:", employeeCount + 1);
@@ -82,7 +33,7 @@ class EmployeeManagement
         }
     }
 
-    private void SortEmployeeDataByStartDate()
+    public void SortEmployeeDataByStartDate()
     {
         for (int i = 0; i < employeeCount; i++)
         {
@@ -111,10 +62,8 @@ class EmployeeManagement
         }
     }
 
-    private void DisplayEmployeeData()
+    public void DisplayEmployeeData()
     {
-        Console.WriteLine("Employee Data:");
-        Console.WriteLine("Name Department Salary StartDate");
         for (int i = 0; i < employeeCount; i++)
         {
             Console.WriteLine("{0} {1} {2} {3}", employees[i, 0], employees[i, 1], employees[i, 2], employees[i, 3]);
@@ -122,9 +71,8 @@ class EmployeeManagement
         Console.WriteLine();
     }
 
-    private void DisplayEmployeeList()
+    public void DisplayEmployeeList()
     {
-        Console.WriteLine("Employee List:");
         foreach (string employee in employeeList)
         {
             string[] employeeData = employee.Split(',');
