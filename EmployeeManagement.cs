@@ -6,7 +6,7 @@ class EmployeeManagement
     private string[,] employees = new string[10, 4];
     private List<string> employeeList = new List<string>();
     private int employeeCount = 0;
-    
+
     public void EnterEmployeeData()
     {
         if (employeeCount < 10)
@@ -79,6 +79,24 @@ class EmployeeManagement
             string name = employeeData[0].Trim();
             Console.WriteLine(name);
         }
-    Console.WriteLine();
+        Console.WriteLine();
+    }
+
+    public string[,] Employees
+    {
+        get { return employees; }
+        set { employees = value; }
+    }
+
+    public List<string> EmployeeList
+    {
+        get { return employeeList; }
+        set { employeeList = value; }
+    }
+
+    public int EmployeeCount
+    {
+        get { return employeeCount; }
+        set { employeeCount = value; }
     }
 }
